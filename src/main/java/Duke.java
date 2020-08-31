@@ -6,12 +6,6 @@ public class Duke {
         String line;
         ArrayList<Task> tasks = new ArrayList<>();
         Scanner in = new Scanner(System.in);
-//        String logo = " ____        _        \n"
-//                + "|  _ \\ _   _| | _____ \n"
-//                + "| | | | | | | |/ / _ \\\n"
-//                + "| |_| | |_| |   <  __/\n"
-//                + "|____/ \\__,_|_|\\_\\___|\n";
-//        System.out.println("Hello from\n" + logo);
         final String SPLIT_LINE = "____________________________________________________________";
         System.out.println(SPLIT_LINE);
         System.out.println(" Hello! I'm Duke");
