@@ -4,7 +4,7 @@ import java.util.*;
 public class Duke {
     public static void main(String[] args) {
         String line;
-        ArrayList<String> requests = new ArrayList<String>();
+        ArrayList<String> requests = new ArrayList<>();
         Scanner in = new Scanner(System.in);
 //        String logo = " ____        _        \n"
 //                + "|  _ \\ _   _| | _____ \n"
