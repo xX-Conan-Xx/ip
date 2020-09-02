@@ -17,7 +17,7 @@ public class Duke {
                 System.out.println(SPLIT_LINE);
                 for (int i = 0; i < tasks.size(); i++) {
 
-                    System.out.println((i+1)+":"+"["+tasks.get(i).getStatusIcon()+"] "+tasks.get(i).description);
+                    System.out.println((i+1)+":"+tasks.get(i));
                 }
                 System.out.println(SPLIT_LINE);
             }else if(line.startsWith("done")){
@@ -25,12 +25,38 @@ public class Duke {
                 int taskNumberCompleted = Integer.parseInt(line.replaceAll("\\D+",""))-1;
                 tasks.set(taskNumberCompleted,tasks.get(taskNumberCompleted).completeTask());
                 System.out.println(" Nice! I've marked this task as done:");
-                System.out.println(" "+":"+"["+tasks.get(taskNumberCompleted).getStatusIcon()+"] "+tasks.get(taskNumberCompleted).description);
+                System.out.println(" "+":"+tasks.get(taskNumberCompleted));
                 System.out.println(SPLIT_LINE);
-            } else{
+            } else if(line.startsWith("todo")){
                 System.out.println(SPLIT_LINE);
-                System.out.println("added: "+line);
-                tasks.add(new Task(line));
+                System.out.println(" Got it. I've added this task:");
+                tasks.add(new Todo(line));
+                System.out.println("  "+new Todo(line));
+                System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                System.out.println(SPLIT_LINE);
+//                System.out.println(SPLIT_LINE);
+//                System.out.println("added: "+line);
+//                tasks.add(new Task(line));
+//                System.out.println(SPLIT_LINE);
+            } else if(line.startsWith("deadline")){
+                System.out.println(SPLIT_LINE);
+                System.out.println(" Got it. I've added this task:");
+                tasks.add(new Deadline(line));
+                System.out.println("  "+new Deadline(line));
+                System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                System.out.println(SPLIT_LINE);
+            }
+            else if(line.startsWith("event")){
+                System.out.println(SPLIT_LINE);
+                System.out.println(" Got it. I've added this task:");
+                tasks.add(new Event(line));
+                System.out.println("  "+new Event(line));
+                System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                System.out.println(SPLIT_LINE);
+            }
+            else {
+                System.out.println(SPLIT_LINE);
+                System.out.println(" Cannot understand your words." + System.lineSeparator() + " Type bye to exit.");
                 System.out.println(SPLIT_LINE);
             }
             line = in.nextLine();

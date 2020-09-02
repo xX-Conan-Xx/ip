@@ -18,4 +18,8 @@ public class Task {
     public Task completeTask(){
         return new Task(this.description,true);
     }
+    @Override
+    public String toString(){
+        return"["+this.getStatusIcon()+"] "+this.description;
+    }
 }
