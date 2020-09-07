@@ -73,23 +73,21 @@ public class Duke {
                     System.out.println(SPLIT_LINE);
                 }
             }catch (Exception e){
-                if(in.equals("todo"))
+                if(line.equals("todo"))
                 {   System.out.println(SPLIT_LINE);
                     System.out.println("☹ OOPS!!! The description of a todo cannot be empty.");
                     System.out.println(SPLIT_LINE);
                 }
-                if(in.equals("deadline"))
+                if(line.equals("deadline"))
                 {   System.out.println(SPLIT_LINE);
-                    System.out.println("☹ OOPS!!! The description of a todo cannot be empty.");
+                    System.out.println("☹ OOPS!!! The description of a deadline cannot be empty.");
                     System.out.println(SPLIT_LINE);
                 }
-                if(in.equals("event"))
+                if(line.equals("event"))
                 {   System.out.println(SPLIT_LINE);
-                    System.out.println("☹ OOPS!!! The description of a todo cannot be empty.");
+                    System.out.println("☹ OOPS!!! The description of a event cannot be empty.");
                     System.out.println(SPLIT_LINE);
                 }
-
-
             }
             line = in.nextLine();
         }
