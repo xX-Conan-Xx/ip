@@ -29,31 +29,43 @@ public class Duke {
                     System.out.println(" "+":"+tasks.get(taskNumberCompleted));
                     System.out.println(SPLIT_LINE);
                 } else if(line.startsWith("todo")){
-                    System.out.println(SPLIT_LINE);
-                    System.out.println(" Got it. I've added this task:");
-                    tasks.add(new Todo(line));
-                    System.out.println("  "+new Todo(line));
-                    System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
-                    System.out.println(SPLIT_LINE);
+                    if(line.equals("todo")){
+                        throw new Exception();
+                    }else{
+                        System.out.println(SPLIT_LINE);
+                        System.out.println(" Got it. I've added this task:");
+                        tasks.add(new Todo(line));
+                        System.out.println("  "+new Todo(line));
+                        System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                        System.out.println(SPLIT_LINE);
+                    }
 //                System.out.println(SPLIT_LINE);
 //                System.out.println("added: "+line);
 //                tasks.add(new Task(line));
 //                System.out.println(SPLIT_LINE);
                 } else if(line.startsWith("deadline")){
-                    System.out.println(SPLIT_LINE);
-                    System.out.println(" Got it. I've added this task:");
-                    tasks.add(new Deadline(line));
-                    System.out.println("  "+new Deadline(line));
-                    System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
-                    System.out.println(SPLIT_LINE);
+                    if(line.equals("deadline")){
+                        throw new Exception();
+                    }else{
+                        System.out.println(SPLIT_LINE);
+                        System.out.println(" Got it. I've added this task:");
+                        tasks.add(new Deadline(line));
+                        System.out.println("  "+new Deadline(line));
+                        System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                        System.out.println(SPLIT_LINE);
+                    }
                 }
                 else if(line.startsWith("event")){
-                    System.out.println(SPLIT_LINE);
-                    System.out.println(" Got it. I've added this task:");
-                    tasks.add(new Event(line));
-                    System.out.println("  "+new Event(line));
-                    System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
-                    System.out.println(SPLIT_LINE);
+                    if(line.equals("event")){
+                        throw new Exception();
+                    }else{
+                        System.out.println(SPLIT_LINE);
+                        System.out.println(" Got it. I've added this task:");
+                        tasks.add(new Event(line));
+                        System.out.println("  "+new Event(line));
+                        System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                        System.out.println(SPLIT_LINE);
+                    }
                 }
                 else {
                     System.out.println(SPLIT_LINE);
