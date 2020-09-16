@@ -67,6 +67,16 @@ public class Duke {
                         System.out.println(SPLIT_LINE);
                     }
                 }
+                else if(line.startsWith("delete")){
+                    System.out.println(SPLIT_LINE);
+                    int taskNumberDeleted = Integer.parseInt(line.replaceAll("\\D+",""))-1;
+                    tasks.set(taskNumberDeleted,tasks.get(taskNumberDeleted).completeTask());
+                    System.out.println(" Noted. I've removed this task: ");
+                    System.out.println("  "+tasks.get(taskNumberDeleted));
+                    tasks.remove(taskNumberDeleted);
+                    System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                    System.out.println(SPLIT_LINE);
+                }
                 else {
                     System.out.println(SPLIT_LINE);
                     System.out.println("☹ OOPS!!! The description of a todo cannot be empty.");
