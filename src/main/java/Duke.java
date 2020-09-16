@@ -1,17 +1,25 @@
+import java.io.*;
 import java.util.Scanner;
 import java.util.*;
 
 public class Duke {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String line;
         ArrayList<Task> tasks = new ArrayList<>();
         Scanner in = new Scanner(System.in);
+        FileInputStream fis=new FileInputStream("ip\\src\\data\\duke.txt");
+        Scanner sc=new Scanner(fis);
+        FileWriter writer = new FileWriter("ip\\src\\data\\duke.txt");
         final String SPLIT_LINE = "____________________________________________________________";
         System.out.println(SPLIT_LINE);
         System.out.println(" Hello! I'm Duke");
         System.out.println(" What can I do for you?");
         System.out.println(SPLIT_LINE);
-        line = in.nextLine();
+        if(sc.hasNextLine()){
+            line=sc.nextLine();}
+        else {
+            line=in.nextLine();
+        }
         while (!line.equals("bye")){
             try{
                 if(line.equals("list")){
@@ -99,9 +107,24 @@ public class Duke {
                     System.out.println(SPLIT_LINE);
                 }
             }
-            line = in.nextLine();
+            if(sc.hasNextLine()){
+                line=sc.nextLine();}
+            else {
+                line=in.nextLine();
+            }
         }
-        System.out.println(" Bye. Hope to see you again soon!");
+        for (int i = 0; i < tasks.size(); i++) {
+            if(tasks.get(i) instanceof Deadline){
+                writer.write("deadline " +tasks.get(i).description);}
+            if(tasks.get(i) instanceof Event){
+                writer.write("event " +tasks.get(i).description);}
+            if(tasks.get(i) instanceof Todo){
+                writer.write("todo " +tasks.get(i).description);}
+
+        }
+        writer.close();
+        System.out.println(SPLIT_LINE);
+        System.out.println("Bye. Hope to see you again soon!");
         System.out.println(SPLIT_LINE);
     }
 }
