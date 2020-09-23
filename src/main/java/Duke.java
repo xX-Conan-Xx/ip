@@ -7,9 +7,9 @@ public class Duke {
         String line;
         ArrayList<Task> tasks = new ArrayList<>();
         Scanner in = new Scanner(System.in);
-        FileInputStream fis=new FileInputStream("ip\\src\\data\\duke.txt");
+        FileInputStream fis=new FileInputStream("C:\\Users\\23535\\Documents\\GitHub\\ip\\src\\data\\duke.txt");
         Scanner sc=new Scanner(fis);
-        FileWriter writer = new FileWriter("ip\\src\\data\\duke.txt");
+        FileWriter writer = new FileWriter("C:\\Users\\23535\\Documents\\GitHub\\ip\\src\\data\\duke.txt");
         final String SPLIT_LINE = "____________________________________________________________";
         System.out.println(SPLIT_LINE);
         System.out.println(" Hello! I'm Duke");
@@ -83,6 +83,22 @@ public class Duke {
                     System.out.println("  "+tasks.get(taskNumberDeleted));
                     tasks.remove(taskNumberDeleted);
                     System.out.println(" Now you have " + tasks.size() + " tasks in the list.");
+                    System.out.println(SPLIT_LINE);
+                }
+                else if (line.startsWith("find")){
+                    System.out.println(SPLIT_LINE);
+                    System.out.println("  Here are the matching tasks in your list:\n");
+                    String keyword = line.substring(4);
+                    int count = 1;
+                    for(int i=0;i< tasks.size();i++){
+                        if(tasks.get(i).description.contains(keyword)){
+
+                            System.out.println(count +": " + tasks.get(i));
+                            count ++;
+                        }
+
+                    }
+
                     System.out.println(SPLIT_LINE);
                 }
                 else {
