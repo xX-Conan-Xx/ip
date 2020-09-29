@@ -6,6 +6,11 @@ public class Event extends Task{
         this.at = line.substring((line.indexOf("/")+4));
     }
 
+    public Event(String line, boolean done) {
+        super(line.substring(6,(line.indexOf("/")-1)), done);
+        this.at = line.substring((line.indexOf("/")+4));
+    }
+
     public void setBy(String by) {
         this.at = by;
     }

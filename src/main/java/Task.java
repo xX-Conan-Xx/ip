@@ -11,12 +11,21 @@ public class Task {
         this.isDone = isDone;
     }
 
+    public void setDone(boolean done) {
+        isDone = done;
+    }
+
+    public boolean isDone() {
+        return isDone;
+    }
+
     public String getStatusIcon() {
         return (isDone ? "\u2713" : "\u2718"); //return tick or X symbols
     }
 
     public Task completeTask(){
-        return new Task(this.description,true);
+        this.setDone(true);
+        return this;
     }
     @Override
     public String toString(){
