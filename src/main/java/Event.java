@@ -2,7 +2,7 @@ public class Event extends Task{
     protected String at;
 
     public Event(String line) {
-        super(line.substring(6,(line.indexOf("/")-1)));
+        super(line.substring(6,(line.indexOf("/")-1)));//divide it by"/"
         this.at = line.substring((line.indexOf("/")+4));
     }
 
