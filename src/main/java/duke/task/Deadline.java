@@ -1,3 +1,4 @@
+package duke.task;
 public class Deadline extends Task {
 
     protected String by;
@@ -15,14 +16,6 @@ public class Deadline extends Task {
     public Task completeTask(){
         this.setDone(true);
         return this;
-    }
-
-    public void setBy(String by) {
-        this.by = by;
-    }
-
-    public String getBy() {
-        return by;
     }
     @Override
     public String toString(){
